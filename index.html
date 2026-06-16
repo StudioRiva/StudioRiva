@@ -668,25 +668,28 @@
         <p class="section-body" style="margin-top:16px;">Alcuni dei progetti realizzati come produttore, recording engineer e mixing & mastering engineer. Clicca per saperne di più.</p>
       </div>
 
-      <!-- GRIGLIA COPERTINE -->
-      <div id="pgGrid" class="reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-bottom:16px;"></div>
+      <!-- 2 COLONNE: griglia sx + playlist dx -->
+      <div style="display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:start;" class="pg-two-col">
 
-      <!-- OVERLAY DETTAGLIO -->
-      <div id="pgOverlay" style="display:none;background:var(--c-surface);border:1px solid rgba(127,163,212,0.12);border-radius:4px;padding:24px;margin-bottom:40px;">
-        <button onclick="closePO()" style="background:none;border:1px solid rgba(127,163,212,0.2);color:var(--c-muted);font-family:inherit;font-size:12px;letter-spacing:0.08em;padding:6px 14px;border-radius:2px;cursor:pointer;margin-bottom:20px;">← chiudi</button>
-        <div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;">
-          <img id="pgOImg" src="" alt="" style="width:140px;height:140px;object-fit:cover;border-radius:3px;flex-shrink:0;">
-          <div style="flex:1;min-width:200px;">
-            <p id="pgOLabel" style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--c-sky);margin-bottom:6px;"></p>
-            <h3 id="pgOTitle" style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--c-text);margin-bottom:12px;"></h3>
-            <p id="pgODesc" style="font-size:14px;color:var(--c-muted);line-height:1.8;margin-bottom:14px;"></p>
-            <span id="pgOBadge" style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--c-accent);border:1px solid rgba(74,109,181,0.35);padding:4px 12px;border-radius:2px;"></span>
+        <!-- COLONNA SX: griglia 3x3 + overlay -->
+        <div>
+          <div id="pgGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:12px;"></div>
+          <div id="pgOverlay" style="display:none;background:var(--c-surface);border:1px solid rgba(127,163,212,0.12);border-radius:4px;padding:20px;">
+            <button onclick="closePO()" style="background:none;border:1px solid rgba(127,163,212,0.2);color:var(--c-muted);font-family:inherit;font-size:11px;letter-spacing:0.08em;padding:5px 12px;border-radius:2px;cursor:pointer;margin-bottom:16px;">← chiudi</button>
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <img id="pgOImg" src="" alt="" style="width:100px;height:100px;object-fit:cover;border-radius:3px;flex-shrink:0;">
+              <div style="flex:1;min-width:0;">
+                <p id="pgOLabel" style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--c-sky);margin-bottom:4px;"></p>
+                <h3 id="pgOTitle" style="font-family:'DM Serif Display',serif;font-size:18px;color:var(--c-text);margin-bottom:10px;"></h3>
+                <p id="pgODesc" style="font-size:13px;color:var(--c-muted);line-height:1.75;margin-bottom:12px;"></p>
+                <span id="pgOBadge" style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--c-accent);border:1px solid rgba(74,109,181,0.35);padding:3px 10px;border-radius:2px;"></span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- PLAYLIST SPOTIFY -->
-      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+        <!-- COLONNA DX: playlist -->
+        <div style="display:flex;flex-direction:column;gap:16px;">
         <div style="background:var(--c-surface);border:1px solid rgba(127,163,212,0.1);border-radius:4px;overflow:hidden;">
           <div style="padding:14px 18px 12px;border-bottom:1px solid rgba(127,163,212,0.08);">
             <p style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--c-sky);margin-bottom:4px;">Playlist Spotify</p>
@@ -701,7 +704,8 @@
           </div>
           <iframe src="https://open.spotify.com/embed/playlist/7E3TI24HFwjpvdeqyhS6B4?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="display:block;"></iframe>
         </div>
-      </div>
+        </div><!-- fine col dx -->
+      </div><!-- fine 2-col -->
     </div>
   </section>
 
