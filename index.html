@@ -483,7 +483,8 @@
 
       /* Portfolio cards: copertina più piccola */
       .portfolio-card { grid-template-columns: 72px 1fr; }
-      #pgGrid { grid-template-columns: repeat(3, 1fr) !important; }
+      #pgGrid { grid-template-columns: repeat(4, 1fr) !important; }
+      .pg-two-col { grid-template-columns: 1fr !important; }
       .portfolio-playlists { margin-top: 0; }
 
       /* Form: colonne → righe */
@@ -663,8 +664,8 @@
     <div style="max-width:1100px;margin:0 auto;">
       <div class="reveal" style="margin-bottom:48px;">
         <p class="section-label">Portfolio</p>
-        <h2 class="section-title">Lavori <em>selezionati</em></h2>
-        <p class="section-body" style="margin-top:16px;">Alcuni dei progetti realizzati come produttore, mixer o masterizzatore. Clicca per saperne di più.</p>
+        <h2 class="section-title">Portfolio</h2>
+        <p class="section-body" style="margin-top:16px;">Alcuni dei progetti realizzati come produttore, recording engineer e mixing & mastering engineer. Clicca per saperne di più.</p>
       </div>
 
       <!-- GRIGLIA COPERTINE -->
@@ -884,9 +885,9 @@
       { artist: 'Bruno', title: 'Oh Issa', badge: 'Mix · Coproduzione · Recording', label: 'Epic Records / Sony Music Italy', img: 'portfolio-bruno-ohissa.jpg', desc: "Il secondo singolo, quello che Bruno considera il suo vero biglietto da visita. Un flusso di coscienza che unisce soul, canzone italiana e urban, con uno sguardo alle sonorità internazionali. Recording, mix e coproduzione." },
       { artist: 'Bruno', title: 'Amiko Mio', badge: 'Mix · Coproduzione · Recording', label: 'Epic Records / Sony Music Italy', img: 'portfolio-bruno-amiko.jpg', desc: "Terzo singolo sempre per Epic/Sony. Un brano che apre le porte del suo mondo artistico fatto di ritmo e autenticità. Recording, mix e coproduzione." },
       { artist: 'Locker', title: 'Pressione', badge: 'Produzione', label: 'Indipendente', img: 'portfolio-locker.jpg', desc: "Progetto indipendente bresciano che ha saputo costruirsi un pubblico solido e affezionato. Produzione di diverse tracce tra cui Scintille, Terapia, Colpevole, Le fiamme e Pressione." },
+      { artist: 'Nanà', title: 'Titre à Choisir', badge: 'Produzione · Recording', label: 'Indipendente', img: 'portfolio-nana.jpg', desc: "EP sperimentale cantato in francese con sound elettronico e ricercato. Produzione, registrazione e direzione artistica completa." },
       { artist: 'Lancio', title: 'Chi ha paura del buio?', badge: 'Produzione · Recording', label: 'Indipendente', img: 'portfolio-lancio-1.jpg', desc: "Primo EP di Lancio. Pop e R&B moderno con un suono personale e riconoscibile. Produzione di Uragano e Farmi male, registrazione completa in Studio Riva." },
       { artist: 'Lancio', title: 'Non esiste solo l\'amore', badge: 'Produzione · Recording · Mix · Master', label: 'Indipendente', img: 'portfolio-lancio-2.jpg', desc: "Secondo EP di Lancio, prodotto e coprodotto interamente qui. Un progetto più maturo e definito, curato dalla registrazione al master." },
-      { artist: 'Nanà', title: 'Titre à Choisir', badge: 'Produzione · Recording', label: 'Indipendente', img: 'portfolio-nana.jpg', desc: "EP sperimentale cantato in francese con sound elettronico e ricercato. Produzione, registrazione e direzione artistica completa." },
     ];
     let pgActive = null;
     (function buildGrid() {
