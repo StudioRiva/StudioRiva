@@ -794,16 +794,16 @@
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" for="nome">Nome</label>
-            <input class="form-input" id="nome" type="text" placeholder="Il tuo nome" required autocomplete="name" />
+            <input class="form-input" id="nome" name="nome" type="text" placeholder="Il tuo nome" required autocomplete="name" />
           </div>
           <div class="form-group">
             <label class="form-label" for="email">Email</label>
-            <input class="form-input" id="email" type="email" placeholder="tua@email.com" required autocomplete="email" />
+            <input class="form-input" id="email" name="email" type="email" placeholder="tua@email.com" required autocomplete="email" />
           </div>
         </div>
         <div class="form-group">
           <label class="form-label" for="servizio">Cosa stai cercando</label>
-          <select class="form-select" id="servizio">
+          <select class="form-select" id="servizio" name="servizio">
             <option value="" disabled selected>Seleziona un servizio</option>
             <option>Mix</option>
             <option>Master</option>
@@ -815,7 +815,7 @@
         </div>
         <div class="form-group">
           <label class="form-label" for="messaggio">Messaggio</label>
-          <textarea class="form-textarea" id="messaggio"
+          <textarea class="form-textarea" id="messaggio" name="messaggio"
             placeholder="Raccontami il progetto — genere, stato di avanzamento, cosa stai cercando..."></textarea>
         </div>
         <button type="submit" class="form-submit">Invia messaggio</button>
