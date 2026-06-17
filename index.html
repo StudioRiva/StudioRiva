@@ -955,18 +955,39 @@
     }
     function brunoSlide(dir) { brunoGo((brunoIdx + dir + 3) % 3); }
 
-    function handleSubmit(e) {
+    function submitForm(e) {
       e.preventDefault();
+      const form = e.target;
       const status = document.getElementById('formStatus');
-      /*
-        ISTRUZIONE — per ricevere le email gratis:
-        1. Vai su https://formspree.io → crea account → nuovo form
-        2. Aggiungi al tag <form>: action="https://formspree.io/f/XXXXXXXX" method="POST"
-        3. Rimuovi onsubmit="handleSubmit(event)" e questo script
-      */
-      status.textContent = 'Messaggio inviato! Ti rispondo entro 24 ore.';
-      status.style.color = '#7fa3d4';
-      e.target.reset();
+      const submitBtn = form.querySelector('.form-submit');
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Invio in corso...';
+      status.textContent = '';
+
+      fetch('https://formspree.io/f/xjgddgve', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(response => {
+          if (response.ok) {
+            status.textContent = 'Messaggio inviato! Ti rispondo entro 24 ore.';
+            status.style.color = '#7fa3d4';
+            form.reset();
+          } else {
+            status.textContent = 'Qualcosa è andato storto. Riprova o scrivi via email.';
+            status.style.color = '#d47f7f';
+          }
+        })
+        .catch(() => {
+          status.textContent = 'Qualcosa è andato storto. Riprova o scrivi via email.';
+          status.style.color = '#d47f7f';
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Invia messaggio';
+        });
     }
 
     /* Gallery lightbox */
